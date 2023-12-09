@@ -12,4 +12,8 @@ export class CommentsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  onLeaveComment() {
+    throw new Error('Method not implemented.');
+  }
 }
