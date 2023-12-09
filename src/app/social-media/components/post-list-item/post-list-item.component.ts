@@ -13,6 +13,8 @@ export class PostListItemComponent {
     postId: number;
   }>();
 
+  tempUser = { lastName: 'Alexander', firstName: 'Will' };
+
   onNewComment(comment: string) {
     this.postCommented.emit({ comment, postId: this.post.id });
   }
