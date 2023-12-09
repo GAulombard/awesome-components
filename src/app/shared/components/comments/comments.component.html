@@ -3,7 +3,7 @@
     ><input
       type="text"
       matInput
-      placeholder="Leave a comment" /></mat-form-field
+      placeholder="Leave a comment" [formControl]="commentCtrl"/></mat-form-field
 ><button><mat-icon mat-icon-button color="primary" (click)="onLeaveComment()">send</mat-icon></button></div>
 <mat-list *ngIf="comments.length"
   ><h2 matSubheader>Commentaires</h2>
