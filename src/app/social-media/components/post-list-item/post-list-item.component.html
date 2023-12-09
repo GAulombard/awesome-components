@@ -14,8 +14,8 @@
       [src]="imageUrl"
       [alt]="post.title"
     />
-    <span class="post-content">{{ post.content }}</span>
   </mat-card-content>
+  <span class="post-content">{{ post.content }}</span>
   <mat-card-actions
     ><app-comments [comments]="post.comments"></app-comments
   ></mat-card-actions>
