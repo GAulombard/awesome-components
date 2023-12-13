@@ -32,7 +32,7 @@ import {
         })
       ),
       transition('default => active', [animate('100ms ease-in-out')]),
-      transition('active => default', [animate('500ms ease-in-out')]),
+      transition('active => default', [animate('250ms ease-in-out')]),
     ]),
   ],
 })
@@ -41,7 +41,7 @@ export class CommentsComponent implements OnInit {
   @Output() newComment = new EventEmitter<string>();
 
   commentCtrl!: FormControl;
-  listItemAnimationState: 'default' | 'active' = 'default';
+  animationState: { [key: number]: 'default' | 'active' } = {};
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -50,6 +50,9 @@ export class CommentsComponent implements OnInit {
       Validators.required,
       Validators.minLength(10),
     ]);
+    for (let i in this.comments) {
+      this.animationState[i] = 'default';
+    }
   }
 
   onLeaveComment() {
@@ -60,11 +63,11 @@ export class CommentsComponent implements OnInit {
     this.commentCtrl.reset();
   }
 
-  onListItemMouseEnter() {
-    this.listItemAnimationState = 'active';
+  onListItemMouseEnter(index: number) {
+    this.animationState[index] = 'active';
   }
 
-  onListItemMouseLeave() {
-    this.listItemAnimationState = 'default';
+  onListItemMouseLeave(index: number) {
+    this.animationState[index] = 'default';
   }
 }
