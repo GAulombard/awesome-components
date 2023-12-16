@@ -7,9 +7,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrl: './complex-form.component.scss',
 })
 export class ComplexFormComponent implements OnInit {
-onSubmitForm() {
-throw new Error('Method not implemented.');
-}
+  onSubmitForm() {}
   mainForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {}
